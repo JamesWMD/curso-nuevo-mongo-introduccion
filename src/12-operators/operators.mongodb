@@ -1,0 +1,30 @@
+use("platzi_store")
+//===================================================================================================//
+//Usaremos $gt (greater than (>)): Mayor que, y $gte (greater than or equal (>=)): Mayor o igual que.//
+//===================================================================================================//
+//Buscaremos todos los documetos que tengas el qty Mayor que 20:
+//db.inventory.find({qty: {$gt: 20} })
+
+//Buscaremos todos los documetos que tengas el qty Mayor que e igual 20:
+//db.inventory.find({qty: {$gte: 20} })
+
+
+//=============================================================================================//
+//Usaremos $lt (less than (<)): Menor que, y $lte (less than or equal (<=)): Menor o igual que.//
+//=============================================================================================//
+//Buscaremos todos los documetos que tengas el qty Menor que 20:
+//db.inventory.find({qty: {$lt: 20} })
+
+//Buscaremos todos los documetos que tengas el qty Menor o igual que 20:
+//db.inventory.find({qty: {$lte: 20} })
+
+//=======================================================================//
+//Join (Uniones)
+//Usaremos los dos Operadores
+//db.inventory.find({qty: {$gte: 20, $lte: 25} })
+
+//Ahora con 2 condiciones
+db.inventory.find({
+  "item.code": "123",
+  qty: {$gte: 20, $lte: 25}
+})

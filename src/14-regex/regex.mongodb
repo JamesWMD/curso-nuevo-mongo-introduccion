@@ -1,0 +1,15 @@
+use("platzi_store")
+
+//db.inventory.find({"item.description":"Single line description."})
+
+//db.inventory.find({"item.description": {$regex: /line/}})
+
+
+//Encontrar palabra que termine con "line" y para que la encuentre no importando si esta en MAYUSCYLAS O minusculas de añade la letra "i":
+//db.inventory.find({"item.description": {$regex: /line$/i}})
+
+//Encontrar palabra que empiecen con "single"
+//db.inventory.find({"item.description": {$regex: /^single/i}})
+
+// Buscar el parrafo que empiece con "S" usamos el operador MULTILINE (m), el cual se utilza cuando temos saltos de lineas
+db.inventory.find({"item.description": {$regex: /^s/im}})

@@ -1,0 +1,13 @@
+use("sample_training")
+
+db.zips.updateMany(
+  //query
+  {city:"CLEVELAND"},
+  //update - operators
+  //$set: Permite agregar o modificar un atributo.
+  {
+    $set: {
+      myAttr: "Hola"
+    }
+  }
+)

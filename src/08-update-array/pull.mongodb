@@ -1,0 +1,20 @@
+use("platzi_store")
+//removeremos un elemento con el $pull
+//El Operador $pull nos permite eliminar elementos a una Array
+/*Sintaxis:
+db.inventory.updateMany({}, {
+  $pull: {
+    tags:"book"
+  }
+})
+*/
+
+//removeremos varios elementos con el $pull y $in
+//El operador $in encuentra cualquier  valor especificado en una matriz o array
+db.inventory.updateMany({}, {
+    $pull: {
+      tags: {
+        $in: ["appliance", "school"]
+      }
+    }
+})

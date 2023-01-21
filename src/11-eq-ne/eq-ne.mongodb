@@ -1,0 +1,29 @@
+use("platzi_store")
+
+//Comparison Query Operators (Operadores de consulta de comparación)
+
+//==========================//
+//Usaremos el $eq: igual que//
+//==========================//
+
+//PARA BUSCAR EN UN DOCUMENTO
+//De forma implicita
+//db.inventory.find({ qty: 20 })
+
+//De forma explicita
+//db.inventory.find({ qty: { $eq: 20 })
+
+//PARA BUSCAR EN UN SUBDOCUMENTO:
+//De forma implicita
+//db.inventory.find({ "item.code": "123" })
+
+//De forma explicita
+//db.inventory.find({ "item.code": {$eq: "123"} })
+
+
+//==============================//
+//Usaremos el $ne: Diferente que//
+//==============================//
+
+//solo se puede usar de forma explicita
+db.inventory.find({ qty: {$ne: 20 }})

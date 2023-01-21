@@ -1,0 +1,13 @@
+use("sample_training")
+
+db.zips.updateMany(
+  //query
+  {city:"CLEVELAND"},
+  //update - operators
+  //$unset: Eliminar algun atributo.
+  {
+    $unset: {
+      my_data: ""
+    }
+  }
+)

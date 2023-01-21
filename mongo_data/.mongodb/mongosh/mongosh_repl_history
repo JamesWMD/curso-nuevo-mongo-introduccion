@@ -1,0 +1,3 @@
+db.productos.find()
+use("platzi_store")
+show dbs

@@ -1,0 +1,16 @@
+use("platzi_store")
+
+db.productos.updateOne(
+  //query
+  {_id:2},
+  //cambio => operadores
+  //El Operador "$set" Establece el valor del campo en un documento y sirve para actualizar 
+  {
+    $set: {
+      name:'change name',
+      price: 3000,
+      tags: ['A', 'B', 'C']
+      }
+  }
+)
+db.productos.find()

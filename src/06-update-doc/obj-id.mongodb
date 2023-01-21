@@ -1,0 +1,15 @@
+use("platzi_store")
+
+db.productos.updateOne(
+  //el "ObjectId" sirve para buscar por los ID generados automaticamente por MongoDB "ObjID", "$oid", sin ese operador nunca lo encontrara
+  //query
+  {_id:ObjectId("63c752918bf75a194491c190")},
+  //cambio => operadores
+  //$inc: incrementa los valores numericos
+  {
+    $inc: {
+      price: 100,
+      }
+  }
+)
+db.productos.find()

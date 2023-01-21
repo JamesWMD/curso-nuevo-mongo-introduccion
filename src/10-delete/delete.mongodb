@@ -1,0 +1,9 @@
+use("platzi_store")
+// para eleminar un documento  de una coleccion por el _id
+//db.products.deleteOne({_id: 1})
+
+// Para eliminar varios documentos  de una coleccion por le _id
+//db.products.deleteMany({price: 100})
+
+//para eliminar todo los documetos de una coleccion
+db.products.drop()

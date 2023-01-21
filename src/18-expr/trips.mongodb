@@ -1,0 +1,20 @@
+use("sample_training")
+//El $expr Permite al usuario expresiones de agregación dentro del lenguaje de consulta
+
+/*
+db.trips.find({
+  $expr: {
+    $eq:["$start station id", "$end station id"]
+  }
+}).count()
+*/
+
+
+db.trips.find({
+  $expr: {
+    $and:[
+      {$eq: ["$start station id", "$end station id"]},
+      {$gte: ["$tripduration", 1200]}
+    ]
+  }
+}).count()

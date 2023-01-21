@@ -1,0 +1,9 @@
+use("platzi_store")
+
+db.inventory.updateOne({_id: 4}, {
+    $push: {
+      tags:"headphone"
+    }
+})
+
+//El Operador $push nos permite agregar elementos a un Array

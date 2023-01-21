@@ -1,0 +1,41 @@
+use("platzi_store")
+//crea un nuevo documento
+/*
+db.iot.insertOne({
+  _id: 5,
+  sensor: "A001",
+  date: "2022-01-03",
+  readings: [1212]
+})
+*/
+
+//el el operador $pop elimina el elemnto dentro de un array colocado el el muro de la casilla donde se encuentra el elemento
+// Ejemeplo
+
+/*
+db.iot.insertMany([
+  { _id: 1, sensor: "A001", date: "2022-01-03", readings: [A,B,C,D] },
+])
+
+Estos son los elementos de un Array y estan ubicado de la siguente forma: A = -1, B = 1, C = 2, D = 3
+Si deseao borra el elemento B uso la siguente sintaxis:
+
+db.iot.updateOne({
+  _id: 1,
+  sensor: "A001",
+  date: "2022-01-03",
+}, {
+  $pop:{
+    readings: 1
+  }
+})
+*/
+db.iot.updateOne({
+  _id: 5,
+  sensor: "A001",
+  date: "2022-01-03",
+}, {
+  $push:{
+    readings: 2323
+  }
+})

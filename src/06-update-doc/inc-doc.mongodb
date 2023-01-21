@@ -1,0 +1,14 @@
+use("platzi_store")
+
+db.productos.updateOne(
+  //query
+  {_id:2},
+  //cambio => operadores
+  //$inc: incrementa los valores numericos Incrementa el valor del campo por la cantidad especificada
+  {
+    $inc: {
+      price: 3000,
+      }
+  }
+)
+db.productos.find()
